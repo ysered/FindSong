@@ -59,9 +59,9 @@
 				8427819323835AE600006556 /* AppDelegate.swift */,
 				8427819523835AE600006556 /* SceneDelegate.swift */,
 				8427819723835AE600006556 /* ViewController.swift */,
-				8427819923835AE600006556 /* Main.storyboard */,
 				8427819C23835AE800006556 /* Assets.xcassets */,
 				8427819E23835AE800006556 /* LaunchScreen.storyboard */,
+				8427819923835AE600006556 /* Main.storyboard */,
 				842781A123835AE800006556 /* Info.plist */,
 			);
 			path = FindSong;
