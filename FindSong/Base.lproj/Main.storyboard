@@ -1,24 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ET3-b2-oJ3">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Search View Controller-->
+        <scene sceneID="n9b-m3-UsT">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="ET3-b2-oJ3" customClass="SearchViewController" customModule="FindSong" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HvS-oJ-kzT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xup-uc-exa">
+                                <rect key="frame" x="0.0" y="151" width="414" height="745"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" id="ipP-hh-scT">
+                                <rect key="frame" x="0.0" y="426" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <searchBar contentMode="redraw" preservesSuperviewLayoutMargins="YES" searchBarStyle="minimal" placeholder="Search For Song" showsCancelButton="YES" showsScopeBar="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p2G-Rh-EpM">
+                                <rect key="frame" x="0.0" y="40" width="414" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="8VP-eR-e8H"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits" textContentType="name"/>
+                                <scopeButtonTitles>
+                                    <string>Preview</string>
+                                    <string>Stored</string>
+                                </scopeButtonTitles>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="p2G-Rh-EpM" firstAttribute="leading" secondItem="xup-uc-exa" secondAttribute="leading" id="1lJ-fE-gq4"/>
+                            <constraint firstItem="p2G-Rh-EpM" firstAttribute="leading" secondItem="HvS-oJ-kzT" secondAttribute="leading" id="1oB-gU-oUG"/>
+                            <constraint firstItem="p2G-Rh-EpM" firstAttribute="top" secondItem="HvS-oJ-kzT" secondAttribute="topMargin" constant="-4" id="Gas-ch-efI"/>
+                            <constraint firstItem="p2G-Rh-EpM" firstAttribute="centerX" secondItem="HvS-oJ-kzT" secondAttribute="centerX" id="KOU-Fw-NjL"/>
+                            <constraint firstItem="p2G-Rh-EpM" firstAttribute="trailing" secondItem="xup-uc-exa" secondAttribute="trailing" id="TLx-C8-EK5"/>
+                            <constraint firstAttribute="bottom" secondItem="xup-uc-exa" secondAttribute="bottom" id="Whc-58-XbU"/>
+                            <constraint firstItem="xup-uc-exa" firstAttribute="top" secondItem="p2G-Rh-EpM" secondAttribute="bottom" constant="55" id="zqq-c5-Mzi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cQ3-pO-aE9"/>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="ipP-hh-scT" id="hmj-HI-Wvc"/>
+                        <outlet property="searchSongBar" destination="p2G-Rh-EpM" id="f4m-ND-pux"/>
+                        <outlet property="songsTableView" destination="xup-uc-exa" id="YWa-Wb-a8B"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Jl-f4-TK0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-668.11594202898561" y="-527.00892857142856"/>
         </scene>
     </scenes>
 </document>

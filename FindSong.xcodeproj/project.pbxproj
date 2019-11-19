@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		8427819423835AE600006556 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427819323835AE600006556 /* AppDelegate.swift */; };
 		8427819623835AE600006556 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427819523835AE600006556 /* SceneDelegate.swift */; };
-		8427819823835AE600006556 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427819723835AE600006556 /* ViewController.swift */; };
 		8427819B23835AE600006556 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8427819923835AE600006556 /* Main.storyboard */; };
 		8427819D23835AE800006556 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8427819C23835AE800006556 /* Assets.xcassets */; };
 		842781A023835AE800006556 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8427819E23835AE800006556 /* LaunchScreen.storyboard */; };
+		842781A92383695D00006556 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842781A82383695D00006556 /* SearchViewController.swift */; };
+		843625E1238372DB007482E5 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843625E0238372DB007482E5 /* Track.swift */; };
+		843625E32384995C007482E5 /* ITunesPreviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843625E22384995C007482E5 /* ITunesPreviewService.swift */; };
+		843625E6238499D2007482E5 /* TrackList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843625E5238499D2007482E5 /* TrackList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8427819023835AE600006556 /* FindSong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindSong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8427819323835AE600006556 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8427819523835AE600006556 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8427819723835AE600006556 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8427819A23835AE600006556 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8427819C23835AE800006556 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8427819F23835AE800006556 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		842781A123835AE800006556 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		842781A82383695D00006556 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		843625E0238372DB007482E5 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		843625E22384995C007482E5 /* ITunesPreviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesPreviewService.swift; sourceTree = "<group>"; };
+		843625E5238499D2007482E5 /* TrackList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +64,32 @@
 			children = (
 				8427819323835AE600006556 /* AppDelegate.swift */,
 				8427819523835AE600006556 /* SceneDelegate.swift */,
-				8427819723835AE600006556 /* ViewController.swift */,
+				842781A82383695D00006556 /* SearchViewController.swift */,
+				843625DF238372BD007482E5 /* Model */,
+				843625E42384999D007482E5 /* Networking */,
 				8427819C23835AE800006556 /* Assets.xcassets */,
 				8427819E23835AE800006556 /* LaunchScreen.storyboard */,
 				8427819923835AE600006556 /* Main.storyboard */,
 				842781A123835AE800006556 /* Info.plist */,
 			);
 			path = FindSong;
+			sourceTree = "<group>";
+		};
+		843625DF238372BD007482E5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				843625E0238372DB007482E5 /* Track.swift */,
+				843625E5238499D2007482E5 /* TrackList.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		843625E42384999D007482E5 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				843625E22384995C007482E5 /* ITunesPreviewService.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +163,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8427819823835AE600006556 /* ViewController.swift in Sources */,
 				8427819423835AE600006556 /* AppDelegate.swift in Sources */,
+				842781A92383695D00006556 /* SearchViewController.swift in Sources */,
 				8427819623835AE600006556 /* SceneDelegate.swift in Sources */,
+				843625E6238499D2007482E5 /* TrackList.swift in Sources */,
+				843625E32384995C007482E5 /* ITunesPreviewService.swift in Sources */,
+				843625E1238372DB007482E5 /* Track.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
