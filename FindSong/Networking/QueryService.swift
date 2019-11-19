@@ -1,13 +1,13 @@
 
 import Foundation
 
-class ITunesPreviewService {
-    
-    typealias QueryResult = ([Track]?, String) -> ()
-    
+typealias QueryResult = ([Track]?, String) -> ()
+
+class QueryService {
+
     private let baseUrlComponents = URLComponents(string: "https://itunes.apple.com/search")
     private let query = "media=music&entity=song&term="
-    
+   
     private lazy var urlSession: URLSession = {
         let config = URLSessionConfiguration.default
         config.waitsForConnectivity = true
@@ -18,8 +18,7 @@ class ITunesPreviewService {
     private let decoder = JSONDecoder()
     
     func searchForSong(by name: String, completion: @escaping QueryResult) {
-        dataTask?.cancel()
-        
+        discardPreviousQuery()
         guard let url = getUrlByTerm(term: name) else {
             print("Couln't build URL for term: \(name)")
             return
@@ -33,6 +32,10 @@ class ITunesPreviewService {
             }
         }
         dataTask?.resume()
+    }
+    
+    func discardPreviousQuery() {
+        dataTask?.cancel()
     }
     
     private func getUrlByTerm(term: String) -> URL? {

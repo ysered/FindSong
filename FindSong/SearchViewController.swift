@@ -3,7 +3,7 @@ import UIKit
 
 class SearchViewController: UIViewController {
 
-    private lazy var tracksService = { ITunesPreviewService() }()
+    private lazy var queryService = { QueryService() }()
     
     @IBOutlet weak var searchSongBar: UISearchBar!
     @IBOutlet weak var songsTableView: UITableView!
@@ -25,7 +25,7 @@ extension SearchViewController: UISearchBarDelegate {
         }
         print("Searching for text: \(searchText)")
         activityIndicator.startAnimating()
-        tracksService.searchForSong(by: searchText, completion: { tracks, error in
+        queryService.searchForSong(by: searchText, completion: { tracks, error in
             self.activityIndicator.stopAnimating()
             if let tracks = tracks {
                 let songNames = tracks.map { $0.trackName }
@@ -38,6 +38,7 @@ extension SearchViewController: UISearchBarDelegate {
        
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.searchTextField.text = ""
+        queryService.discardPreviousQuery()
     }
     
     func searchBarBookmarkButtonClicked(_ searchBar: UISearchBar) {

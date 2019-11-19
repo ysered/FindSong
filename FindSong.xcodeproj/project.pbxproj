@@ -14,7 +14,7 @@
 		842781A023835AE800006556 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8427819E23835AE800006556 /* LaunchScreen.storyboard */; };
 		842781A92383695D00006556 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842781A82383695D00006556 /* SearchViewController.swift */; };
 		843625E1238372DB007482E5 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843625E0238372DB007482E5 /* Track.swift */; };
-		843625E32384995C007482E5 /* ITunesPreviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843625E22384995C007482E5 /* ITunesPreviewService.swift */; };
+		843625E32384995C007482E5 /* QueryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843625E22384995C007482E5 /* QueryService.swift */; };
 		843625E6238499D2007482E5 /* TrackList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843625E5238499D2007482E5 /* TrackList.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,7 +28,7 @@
 		842781A123835AE800006556 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		842781A82383695D00006556 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		843625E0238372DB007482E5 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
-		843625E22384995C007482E5 /* ITunesPreviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesPreviewService.swift; sourceTree = "<group>"; };
+		843625E22384995C007482E5 /* QueryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryService.swift; sourceTree = "<group>"; };
 		843625E5238499D2007482E5 /* TrackList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,7 +87,7 @@
 		843625E42384999D007482E5 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				843625E22384995C007482E5 /* ITunesPreviewService.swift */,
+				843625E22384995C007482E5 /* QueryService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -167,7 +167,7 @@
 				842781A92383695D00006556 /* SearchViewController.swift in Sources */,
 				8427819623835AE600006556 /* SceneDelegate.swift in Sources */,
 				843625E6238499D2007482E5 /* TrackList.swift in Sources */,
-				843625E32384995C007482E5 /* ITunesPreviewService.swift in Sources */,
+				843625E32384995C007482E5 /* QueryService.swift in Sources */,
 				843625E1238372DB007482E5 /* Track.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
