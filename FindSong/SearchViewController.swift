@@ -33,6 +33,7 @@ extension SearchViewController: UISearchBarDelegate {
             if let tracks = tracks {
                 self.tracks = tracks
                 self.tracksTableView.reloadData()
+                self.searchSongBar.searchTextField.resignFirstResponder()
                 let songNames = tracks.map { $0.trackName }
                 print("Found songs: \(songNames)")
             } else {
