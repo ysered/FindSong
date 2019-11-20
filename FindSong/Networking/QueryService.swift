@@ -48,6 +48,7 @@ class QueryService {
         var tracks = [Track]()
         do {
             let trackList = try decoder.decode(TrackList.self, from: data)
+            
             tracks = trackList.results
         } catch let decodeError as NSError {
             print("Could not decode track list data: \(decodeError.localizedDescription)")

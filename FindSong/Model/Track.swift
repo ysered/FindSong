@@ -5,6 +5,7 @@ struct Track: Codable {
     var trackName: String
     var artistName: String
     var artworkUrl: String
+    var artworkData: Data? = nil
     var previewUrl: String
     var trackPrice: Double
 

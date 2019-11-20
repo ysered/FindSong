@@ -16,6 +16,7 @@
 		843625E1238372DB007482E5 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843625E0238372DB007482E5 /* Track.swift */; };
 		843625E32384995C007482E5 /* QueryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843625E22384995C007482E5 /* QueryService.swift */; };
 		843625E6238499D2007482E5 /* TrackList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843625E5238499D2007482E5 /* TrackList.swift */; };
+		843625E82384B9A7007482E5 /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843625E72384B9A7007482E5 /* TrackCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		843625E0238372DB007482E5 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		843625E22384995C007482E5 /* QueryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryService.swift; sourceTree = "<group>"; };
 		843625E5238499D2007482E5 /* TrackList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackList.swift; sourceTree = "<group>"; };
+		843625E72384B9A7007482E5 /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				8427819323835AE600006556 /* AppDelegate.swift */,
 				8427819523835AE600006556 /* SceneDelegate.swift */,
 				842781A82383695D00006556 /* SearchViewController.swift */,
+				843625E72384B9A7007482E5 /* TrackCell.swift */,
 				843625DF238372BD007482E5 /* Model */,
 				843625E42384999D007482E5 /* Networking */,
 				8427819C23835AE800006556 /* Assets.xcassets */,
@@ -163,6 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				843625E82384B9A7007482E5 /* TrackCell.swift in Sources */,
 				8427819423835AE600006556 /* AppDelegate.swift in Sources */,
 				842781A92383695D00006556 /* SearchViewController.swift in Sources */,
 				8427819623835AE600006556 /* SceneDelegate.swift in Sources */,
