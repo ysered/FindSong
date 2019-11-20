@@ -26,7 +26,6 @@ extension SearchViewController: UISearchBarDelegate {
         guard let searchText = searchBar.text else {
             return
         }
-        print("Searching for text: \(searchText)")
         activityIndicator.startAnimating()
         queryService.searchForSong(by: searchText, completion: { tracks, error in
             self.activityIndicator.stopAnimating()
@@ -34,8 +33,6 @@ extension SearchViewController: UISearchBarDelegate {
                 self.tracks = tracks
                 self.tracksTableView.reloadData()
                 self.searchSongBar.searchTextField.resignFirstResponder()
-                let songNames = tracks.map { $0.trackName }
-                print("Found songs: \(songNames)")
             } else {
                 print("Error occured: \(error)")
             }
@@ -70,10 +67,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
         let track = tracks[indexPath.row]
-        cell.tag = indexPath.row
-        cell.artwork.load(url: track.artworkUrl)
-        cell.artistLabel.text = track.artistName
-        cell.songTitleLabel.text = track.trackName
+        cell.configure(for: track, position: indexPath.row, delegate: self)
         return cell
     }
        
@@ -90,18 +84,5 @@ extension SearchViewController: TrackCellDelegate {
         }
         let track = tracks[cellPosition]
         print("Downloading track by URL: \(track.previewUrl)")
-    }
-}
-
-extension UIImageView {
-    func load(url: String) {
-        let imageUrl = URL(string: url)!
-        DispatchQueue.global().async { [weak self] in
-            if let data = try? Data(contentsOf: imageUrl), let image = UIImage(data: data) {
-                DispatchQueue.main.async {
-                    self?.image = image
-                }
-            }
-        }
     }
 }

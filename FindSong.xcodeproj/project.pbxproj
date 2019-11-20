@@ -17,6 +17,9 @@
 		843625E32384995C007482E5 /* QueryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843625E22384995C007482E5 /* QueryService.swift */; };
 		843625E6238499D2007482E5 /* TrackList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843625E5238499D2007482E5 /* TrackList.swift */; };
 		843625E82384B9A7007482E5 /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843625E72384B9A7007482E5 /* TrackCell.swift */; };
+		84802B7B2385F8CC00ABEEF5 /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84802B7A2385F8CC00ABEEF5 /* FileUtils.swift */; };
+		84802B7E2385F8FB00ABEEF5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84802B7D2385F8FB00ABEEF5 /* Extensions.swift */; };
+		84802B802385FDC100ABEEF5 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84802B7F2385FDC100ABEEF5 /* Downloader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		843625E22384995C007482E5 /* QueryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryService.swift; sourceTree = "<group>"; };
 		843625E5238499D2007482E5 /* TrackList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackList.swift; sourceTree = "<group>"; };
 		843625E72384B9A7007482E5 /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
+		84802B7A2385F8CC00ABEEF5 /* FileUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtils.swift; sourceTree = "<group>"; };
+		84802B7D2385F8FB00ABEEF5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		84802B7F2385FDC100ABEEF5 /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +76,7 @@
 				843625E72384B9A7007482E5 /* TrackCell.swift */,
 				843625DF238372BD007482E5 /* Model */,
 				843625E42384999D007482E5 /* Networking */,
+				84802B7C2385F8D600ABEEF5 /* Utils */,
 				8427819C23835AE800006556 /* Assets.xcassets */,
 				8427819E23835AE800006556 /* LaunchScreen.storyboard */,
 				8427819923835AE600006556 /* Main.storyboard */,
@@ -91,8 +98,18 @@
 			isa = PBXGroup;
 			children = (
 				843625E22384995C007482E5 /* QueryService.swift */,
+				84802B7F2385FDC100ABEEF5 /* Downloader.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		84802B7C2385F8D600ABEEF5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				84802B7A2385F8CC00ABEEF5 /* FileUtils.swift */,
+				84802B7D2385F8FB00ABEEF5 /* Extensions.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,9 +183,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84802B802385FDC100ABEEF5 /* Downloader.swift in Sources */,
 				843625E82384B9A7007482E5 /* TrackCell.swift in Sources */,
+				84802B7E2385F8FB00ABEEF5 /* Extensions.swift in Sources */,
 				8427819423835AE600006556 /* AppDelegate.swift in Sources */,
 				842781A92383695D00006556 /* SearchViewController.swift in Sources */,
+				84802B7B2385F8CC00ABEEF5 /* FileUtils.swift in Sources */,
 				8427819623835AE600006556 /* SceneDelegate.swift in Sources */,
 				843625E6238499D2007482E5 /* TrackList.swift in Sources */,
 				843625E32384995C007482E5 /* QueryService.swift in Sources */,

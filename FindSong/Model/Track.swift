@@ -28,3 +28,9 @@ extension Track {
         trackPrice = try values.decode(Double.self, forKey: .trackPrice)
     }
 }
+
+extension Track {
+    var url: URL {
+        return URL(string: previewUrl)!
+    }
+}
