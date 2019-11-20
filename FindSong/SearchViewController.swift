@@ -70,10 +70,26 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
         let track = tracks[indexPath.row]
+        cell.tag = indexPath.row
         cell.artwork.load(url: track.artworkUrl)
         cell.artistLabel.text = track.artistName
         cell.songTitleLabel.text = track.trackName
         return cell
+    }
+       
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+    }
+}
+
+extension SearchViewController: TrackCellDelegate {
+    
+    func dowloadButtonClicked(cellPosition: Int) {
+        guard tracks.indices.contains(cellPosition) else {
+            return
+        }
+        let track = tracks[cellPosition]
+        print("Downloading track by URL: \(track.previewUrl)")
     }
 }
 
