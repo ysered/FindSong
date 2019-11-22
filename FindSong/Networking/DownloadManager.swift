@@ -12,6 +12,7 @@ protocol DownloadManagerDelegate: NSObjectProtocol {
     
     func trackDidDownload(source url: URL, localPath path: URL)
     
+    func downloadingProgress(for url: URL, progress: Float)
 }
 
 class DownloadManager: NSObject, URLSessionDelegate, URLSessionDownloadDelegate {
@@ -28,6 +29,14 @@ class DownloadManager: NSObject, URLSessionDelegate, URLSessionDownloadDelegate 
 
     override private init() {
         super.init()
+    }
+    
+    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
+        guard totalBytesExpectedToWrite > 0 else {
+            return
+        }
+        let progress = Float(totalBytesWritten) / Float(totalBytesExpectedToWrite)
+        debugPrint("Progress \(downloadTask.originalRequest?.url?.lastPathComponent ?? "") \(progress)")
     }
     
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
@@ -52,7 +61,7 @@ class DownloadManager: NSObject, URLSessionDelegate, URLSessionDownloadDelegate 
         download.task!.resume()
     }
     
-    func isAlreadyDownloading(track: Track) -> Bool {
+    private func isAlreadyDownloading(track: Track) -> Bool {
         if let download = activeDownloads[track.url] {
             return download.isDownloading
         }

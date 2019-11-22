@@ -25,7 +25,8 @@ class TrackCell: UITableViewCell {
         artwork.image = nil
         artistLabel.text = ""
         songTitleLabel.text = ""
-        downloadProgress.isHidden = true
+        downloadProgress.isHidden = false
+        downloadProgress.progress = 0.5
         delegate = nil
     }
       
@@ -40,6 +41,11 @@ class TrackCell: UITableViewCell {
         artistLabel.text = track.artistName
         songTitleLabel.text = track.trackName
         downloadButton.isHidden = isDownloaded
+    }
+    
+    func updateDownloadingProgress(progress: Float) {
+        downloadProgress.isHidden = false
+        downloadProgress.progress = progress
     }
 
     @objc func handleTap(_ sender: Any) {
