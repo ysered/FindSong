@@ -33,12 +33,13 @@ class TrackCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func configure(for track: Track, position: Int, delegate: TrackCellDelegate? = nil) {
+    func configure(for track: Track, position: Int, isDownloaded: Bool, delegate: TrackCellDelegate? = nil) {
         tag = position
         self.delegate = delegate
         artwork.load(url: track.artworkUrl)
         artistLabel.text = track.artistName
         songTitleLabel.text = track.trackName
+        downloadButton.isHidden = isDownloaded
     }
 
     @objc func handleTap(_ sender: Any) {

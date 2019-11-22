@@ -3,7 +3,8 @@ import UIKit
 
 class SearchViewController: UIViewController {
 
-    private lazy var queryService = { QueryService() }()
+    private let queryService = QueryService()
+    private let downloadManager = DownloadManager.shared
     
     private var tracks = [Track]()
     
@@ -16,6 +17,7 @@ class SearchViewController: UIViewController {
         searchSongBar.delegate = self
         tracksTableView.delegate = self
         tracksTableView.dataSource = self
+        downloadManager.delegate = self
         activityIndicator.hidesWhenStopped = true
     }
 }
@@ -67,12 +69,19 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
         let track = tracks[indexPath.row]
-        cell.configure(for: track, position: indexPath.row, delegate: self)
+        let isDownloaded = FileManager.localFileExists(with: track.url.lastPathComponent)
+        cell.configure(for: track, position: indexPath.row, isDownloaded: isDownloaded, delegate: self)
         return cell
     }
        
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
+        let track = tracks[indexPath.row]
+        let fileName = track.url.lastPathComponent
+        let isDownloaded = FileManager.localFileExists(with: fileName)
+        if isDownloaded {
+            debugPrint("Play downloaded track at: \(FileManager.localFilePath(for: track.url))")
+        }
     }
 }
 
@@ -83,6 +92,22 @@ extension SearchViewController: TrackCellDelegate {
             return
         }
         let track = tracks[cellPosition]
-        print("Downloading track by URL: \(track.previewUrl)")
+        debugPrint("Downloading track by URL: \(track.previewUrl)")
+        downloadManager.download(track: track)
+    }
+}
+
+extension SearchViewController: DownloadManagerDelegate {
+    
+    func trackDidDownload(source: URL, localPath: URL) {
+        if let index = getTrackIndex(with: source) {
+            let pathToUpdate = IndexPath(row: index, section: 0)
+            tracksTableView.reloadRows(at: [pathToUpdate], with: .none)
+        }
+    }
+    
+    func getTrackIndex(with url: URL) -> Int? {
+        let element = tracks.enumerated().first { $0.element.url == url }
+        return element?.offset
     }
 }
