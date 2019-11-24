@@ -20,6 +20,7 @@
 		84802B7B2385F8CC00ABEEF5 /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84802B7A2385F8CC00ABEEF5 /* FileUtils.swift */; };
 		84802B7E2385F8FB00ABEEF5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84802B7D2385F8FB00ABEEF5 /* Extensions.swift */; };
 		84802B802385FDC100ABEEF5 /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84802B7F2385FDC100ABEEF5 /* DownloadManager.swift */; };
+		84802B84238A194C00ABEEF5 /* PlayTrackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84802B83238A194C00ABEEF5 /* PlayTrackViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		84802B7A2385F8CC00ABEEF5 /* FileUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtils.swift; sourceTree = "<group>"; };
 		84802B7D2385F8FB00ABEEF5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		84802B7F2385FDC100ABEEF5 /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
+		84802B83238A194C00ABEEF5 /* PlayTrackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayTrackViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				8427819323835AE600006556 /* AppDelegate.swift */,
 				8427819523835AE600006556 /* SceneDelegate.swift */,
 				842781A82383695D00006556 /* SearchViewController.swift */,
+				84802B83238A194C00ABEEF5 /* PlayTrackViewController.swift */,
 				843625E72384B9A7007482E5 /* TrackCell.swift */,
 				843625DF238372BD007482E5 /* Model */,
 				843625E42384999D007482E5 /* Networking */,
@@ -188,6 +191,7 @@
 				84802B7E2385F8FB00ABEEF5 /* Extensions.swift in Sources */,
 				8427819423835AE600006556 /* AppDelegate.swift in Sources */,
 				842781A92383695D00006556 /* SearchViewController.swift in Sources */,
+				84802B84238A194C00ABEEF5 /* PlayTrackViewController.swift in Sources */,
 				84802B7B2385F8CC00ABEEF5 /* FileUtils.swift in Sources */,
 				8427819623835AE600006556 /* SceneDelegate.swift in Sources */,
 				843625E6238499D2007482E5 /* TrackList.swift in Sources */,

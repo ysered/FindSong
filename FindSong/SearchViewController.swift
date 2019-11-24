@@ -1,5 +1,6 @@
 
 import UIKit
+import AVKit
 
 class SearchViewController: UIViewController {
 
@@ -87,8 +88,20 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         let fileName = track.url.lastPathComponent
         let isDownloaded = FileManager.localFileExists(with: fileName)
         if isDownloaded {
-            debugPrint("Play downloaded track at: \(FileManager.localFilePath(for: track.url))")
+            let localTrack = FileManager.localFilePath(for: track.url)
+            debugPrint("Play downloaded track at: \(localTrack)")
+            playTrack(track)
         }
+    }
+    
+    private func playTrack(_ track: Track) {
+        let localTrackUrl = FileManager.localFilePath(for: track.url)
+        let controller = PlayTrackViewController()
+        present(controller, animated: true, completion: nil)
+        let player = AVPlayer(url: localTrackUrl)
+        controller.player = player
+        controller.artworkUrl = track.artworkUrl
+        player.play()
     }
 }
 
